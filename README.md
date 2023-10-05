@@ -11,6 +11,7 @@
 
 | LeetCode ID | Problem | Solutions |
 | ----------- | ------- | ---------- |
+| 229 | [Majority Element II](https://leetcode.com/problems/majority-element-ii) | [C++](medium/229-Majority_Element_II/majority_element_ii.cpp) &bull; [javascript](medium/229-Majority_Element_II/majority_element_ii.js) &bull; [Python](medium/229-Majority_Element_II/majority_element_ii.py) &bull; [Rust](medium/229-Majority_Element_II/majority_element_ii.rs) |
 | 2038 | [Remove Colored Pieces if Both Neighbors are the Same Color](https://leetcode.com/problems/remove-colored-pieces-if-both-neighbors-are-the-same-color) | [C++](medium/2038-Remove_Colored_Pieces_if_Both_Neighbors_are_the_Same_Color/remove_colored_pieces_if_both_neighbors_are_the_same_color.cpp) &bull; [javascript](medium/2038-Remove_Colored_Pieces_if_Both_Neighbors_are_the_Same_Color/remove_colored_pieces_if_both_neighbors_are_the_same_color.js) &bull; [Python](medium/2038-Remove_Colored_Pieces_if_Both_Neighbors_are_the_Same_Color/remove_colored_pieces_if_both_neighbors_are_the_same_color.py) &bull; [Rust](medium/2038-Remove_Colored_Pieces_if_Both_Neighbors_are_the_Same_Color/remove_colored_pieces_if_both_neighbors_are_the_same_color.rs) |
 
 
