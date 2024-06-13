@@ -32,24 +32,27 @@ def generate_table(subfolder):
     table.append("| ----------- | ------- | ---------- |")
 
     folder_path = os.path.join(subfolder)
-    for folder_name in os.listdir(folder_path):
-        problem_id = folder_name.split('-')[0]
-        p_link=folder_name.split("-")[1]
-        problem_link = f"https://leetcode.com/problems/{p_link.lower().replace('_', '-')}"
+    print(f"Checking folder: {folder_path}")  # Debug statement
+    try:
+        for folder_name in os.listdir(folder_path):
+            print(f"Processing folder: {folder_name}")  # Debug statement
+            problem_id = folder_name.split('-')[0]
+            p_link = folder_name.split('-')[1]
+            problem_link = f"https://leetcode.com/problems/{p_link.lower().replace('_', '-')}"
 
-        solutions = []
-        link_name=folder_name.split("-")[1].lower()
-        solution_link=f"[C++]({subfolder}/{folder_name}/{link_name}.cpp)"
-        solutions.append(solution_link)
-        solution_link=f"[javascript]({subfolder}/{folder_name}/{link_name}.js)"
-        solutions.append(solution_link)
-        solution_link=f"[Python]({subfolder}/{folder_name}/{link_name}.py)"
-        solutions.append(solution_link)
-        solution_link=f"[Rust]({subfolder}/{folder_name}/{link_name}.rs)"
-        solutions.append(solution_link)
+            solutions = []
+            link_name = folder_name.split('-')[1].lower()
+            extensions = ['cpp', 'js', 'py', 'rs']
+            languages = ['C++', 'JavaScript', 'Python', 'Rust']
+            
+            for ext, lang in zip(extensions, languages):
+                solution_link = f"[{lang}]({subfolder}/{folder_name}/{link_name}.{ext})"
+                solutions.append(solution_link)
 
-        solutions_str = " &bull; ".join(solutions)
-        table.append(f"| {problem_id} | [{p_link.replace('_', ' ')}]({problem_link}) | {solutions_str} |")
+            solutions_str = " &bull; ".join(solutions)
+            table.append(f"| {problem_id} | [{p_link.replace('_', ' ')}]({problem_link}) | {solutions_str} |")
+    except Exception as e:
+        print(f"An error occurred: {e}")
 
     return "\n".join(table)
 
@@ -65,3 +68,5 @@ with open("README.md", "w") as readme_file:
 
 # Convert the markdown to HTML if needed
 html_content = markdown.markdown("\n".join(markdown_content))
+
+print("README.md has been generated successfully.")
